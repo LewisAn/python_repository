@@ -1,25 +1,14 @@
-from xlwt import *
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 30 10:56:49 2019
 
-filename = Workbook(encoding='utf-8')
-table = filename.add_sheet('data')
+@author: apple
+"""
+import pandas as p
 
-data = {'1':['values_one', 'values_two', 'values_three'],
-        '2':[15,16,17],
-        '3':[19,20,21],
-        '4':[22,23,24]
-        }
+a = [1,2,3]
+b = [1,2,3]
 
-ldata = list()
-num = sorted([a for a in data])
-
-for x in num:
-    t = [int(x)]
-    for a in data[x]:
-        t.append(a)
-    ldata.append(t)
-
-for i, p in enumerate(ldata):
-    for j, q in enumerate(p):
-        table.write(i, j, q)
-
-filename.save('data.xlsx')
+dataframe = p.DataFrame({'a':a, 'b':b})
+dataframe.to_csv("test.csv", index=False) 
