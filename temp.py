@@ -32,5 +32,3 @@ with open(filename) as f:
     p.xlabel("", fontsize=16)
     p.ylabel("Temperature (f)", fontsize=10)
     p.tick_params(axis="both", which='major', labelsize=16)
-#    p.savefig('2.png')
-    
