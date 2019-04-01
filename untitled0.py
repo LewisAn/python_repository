@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar 29 20:11:25 2019
+Created on Sat Mar 30 16:19:11 2019
 
 @author: apple
 """
-import csv
-from matplotlib import pyplot as p
 
-filename = 'destinations.csv'
+import matplotlib.pyplot as p
 
-with open(filename) as f:
-    reader = csv.reader(f)
-    header_row = next(reader)
-    spring_factors = list()
-    summer_factors = list()
-    for row in reader:
-        spring_factors.append(float(row[6]))
-    x_values = list(range(50))
-    y1_values = spring_factors
-    p.plot(x_values, y1_values, c='red')
-    p.xlabel("destination index")
-    p.ylabel("spring season factors")
-    p.savefig('1.png')
-    
-        
+# 再画一幅图，画 y = (3*x) ** 2 + 2 * x + 65
+# 画一百个点，你需要用for loop
+# 取一百个点你可以用for i in range(100)
+# for i in range(100):
+#    print(i)
+# 程序会输出0到100，一百个数字
+new_x = []
+new_y = []
+for i in range(100):
+    x = i
+    y = (3*x) ** 2 + 2 * x + 65
+    new_x.append(x)
+    new_y.append(y)
+
+p.plot(new_x, new_y)
+#p.axis([0, 10, 0, 10])
+p.show()
+

@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar 29 21:41:04 2019
+Created on Sat Mar 30 16:57:08 2019
 
 @author: apple
 """
 
 import matplotlib.pyplot as p
+import random as r
+#
+for i in range(0, 100):
+    x = r.randint(0, 500)
+    y = r.randint(0, 500)
+    p.scatter(x, y, s=5, c='black')
 
-x_values = [1,2,3,4,5]
-y1_values = [1,4,9,16,25]
-y2_values = [1,2,3,4,5]
-
-p.plot(x_values, y1_values)
-p.plot(x_values, y2_values)
-p.xlabel("x")
-p.ylabel("y = x^2")
-p.tick_params(axis='both', which='major', labelsize=14)
-
+p.plot()
+p.axis([0, 1000, 0, 1000])
 p.show()
